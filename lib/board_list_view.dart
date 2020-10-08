@@ -195,34 +195,31 @@ class _BoardListViewState extends State<BoardListView> {
 
     // if we move item into different list
     if (onDropList.identifierIndex != dragList.draggedListIdentifier) {
-      // var identifier = dragList.draggedListIdentifier;
-      // var draggedOldListDocuments =
-      // await _dataManager.collection.getDocuments();
-      // var draggedOldListSnapshot = draggedOldListDocuments.documents
-      // .where((element) => element.data['index'] == identifier)
-      // .first;
-      // var draggedOldList = BoardListModel.fromSnapshot(draggedOldListSnapshot);
-      // if (draggedOldList != null) {
-      //   var draggedItem = draggedOldList.items[dataIndex];
-      //   // insert in new list
+      var identifier = dragList.draggedListIdentifier;
+      var draggedOldListDocuments = _dataManager.rows;
+      var draggedOldList = draggedOldListDocuments[identifier];
 
-      //   draggedItem.position = newIndex;
+      if (draggedOldList != null) {
+        var draggedItem = draggedOldList.items[dataIndex];
+        // insert in new list
 
-      //   onDropList.items.insert(newIndex, draggedItem);
-      //   onDropList.items.sublist(newIndex + 1).forEach((element) {
-      //     element.position = element.position + 1.toInt();
-      //   });
+        draggedItem.position = newIndex;
 
-      //   // remove from old list
+        onDropList.items.insert(newIndex, draggedItem);
+        onDropList.items.sublist(newIndex + 1).forEach((element) {
+          element.position = element.position + 1.toInt();
+        });
 
-      //   draggedOldList.items.removeAt(dataIndex);
-      //   draggedOldList.items.sublist(dataIndex).forEach((element) {
-      //     element.position = element.position - 1.toInt();
-      //   });
+        // remove from old list
 
-      //   _dataManager.updateBoardListModel(onDropList);
-      //   _dataManager.updateBoardListModel(draggedOldList);
-      // }
+        draggedOldList.items.removeAt(dataIndex);
+        draggedOldList.items.sublist(dataIndex).forEach((element) {
+          element.position = element.position - 1.toInt();
+        });
+
+        _dataManager.updateBoardListModel(onDropList);
+        _dataManager.updateBoardListModel(draggedOldList);
+      }
 
       return;
     }

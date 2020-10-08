@@ -18,6 +18,7 @@ class DataManager {
   }
 
   add() async {
+    rows.clear();
     await Future.delayed(Duration(seconds: 2));
 
     rows
