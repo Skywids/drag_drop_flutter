@@ -6,6 +6,11 @@ A new Flutter application.
 
 This project is a starting point for a Flutter application.
 
+![Image 1](https://github.com/Skywids/drag_drop_flutter/blob/master/screensots/Screenshot_1602178215.png)
+![Image 2](https://github.com/Skywids/drag_drop_flutter/blob/master/screensots/Screenshot_1602178229.png)
+![Image 3](https://github.com/Skywids/drag_drop_flutter/blob/master/screensots/Screenshot_1602178232.png)
+![Image 4](https://github.com/Skywids/drag_drop_flutter/blob/master/screensots/Screenshot_1602178238.png)
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
